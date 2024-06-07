@@ -6,7 +6,7 @@
 /*   By: habu-zua <habu-zua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:01:49 by habu-zua          #+#    #+#             */
-/*   Updated: 2024/06/02 18:57:21 by habu-zua         ###   ########.fr       */
+/*   Updated: 2024/06/07 16:41:44 by habu-zua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,6 @@ int	check_empty_line(char *line)
 	return (1);
 }
 
-// char	**ft_check_last_line(char *map_tmp, char *line)
-// {
-// 	if (*line)
-// 	{
-// 		line = ft_strdup_map(line);
-// 		map_tmp = ft_strjoin_point(map_tmp, line);
-// 	}
-// 	else
-// 		free(line);
-// 	return (ft_split(map_tmp, '.'));
-// }
-
 int	ft_read_map(t_info *info_map, int fd, char *line)
 {
 	char	*map_tmp;
@@ -51,7 +39,7 @@ int	ft_read_map(t_info *info_map, int fd, char *line)
 	line = ft_strdup_map(line);
 	map_tmp = ft_strjoin_point(map_tmp, line);
 	free(line);
-	while ((get_next_line(fd, &line)) != 0)
+	while ((get_next_line(fd, &line)) != 0 || *line)
 	{
 		if (check_empty_line(line) && !eflag)
 			eflag = 1;
@@ -61,13 +49,7 @@ int	ft_read_map(t_info *info_map, int fd, char *line)
 		map_tmp = ft_strjoin_point(map_tmp, line);
 		free(line);
 	}
-	if (*line)
-	{
-		line = ft_strdup_map(line);
-		map_tmp = ft_strjoin_point(map_tmp, line);
-	}
-	else
-		free(line);
+	free(line);
 	info_map->map = ft_split(map_tmp, '.');
 	free(map_tmp);
 	return (1);
