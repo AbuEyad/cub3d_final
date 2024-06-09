@@ -6,27 +6,11 @@
 /*   By: habu-zua <habu-zua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:02:13 by habu-zua          #+#    #+#             */
-/*   Updated: 2024/06/01 14:20:52 by habu-zua         ###   ########.fr       */
+/*   Updated: 2024/06/09 10:34:23 by habu-zua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/cub3d.h"
-
-void	ft_move_player_mini_map(t_storage *s)
-{
-	s->player->x = (int)(s->player->pos_x * ((s->info->rx / 3)
-				/ s->info->len_x));
-	s->player->y = (int)(s->player->pos_y * ((s->info->ry / 3)
-				/ s->info->len_y)) * s->mlx->size_line / 4;
-	*(int *)(&s->mlx->data_img[(int)(s->player->x + s->player->y + 1)
-			* 4]) = 255;
-	*(int *)(&s->mlx->data_img[(int)(s->player->x + s->player->y - 1)
-			* 4]) = 255;
-	*(int *)(&s->mlx->data_img[(int)(s->player->x + s->player->y +
-	(s->mlx->size_line / 4)) * 4]) = 255;
-	*(int *)(&s->mlx->data_img[(int)(s->player->x + s->player->y -
-	(s->mlx->size_line / 4)) * 4]) = 255;
-}
 
 void	ft_player_pos_x(t_storage *s, t_player *p)
 {

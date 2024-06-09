@@ -6,7 +6,7 @@
 #    By: habu-zua <habu-zua@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 15:19:58 by habu-zua          #+#    #+#              #
-#    Updated: 2024/06/02 17:56:36 by habu-zua         ###   ########.fr        #
+#    Updated: 2024/06/09 10:36:22 by habu-zua         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,6 @@ SRCS =	src/ft_cub3d.c \
 		src/ft_fill_map.c \
 		src/ft_keyboard_action.c \
 		src/ft_movement_player.c \
-		src/ft_mini_map.c \
 		src/ft_exit_prog.c \
 		src/ft_raycaster.c \
 		src/ft_texture.c \
@@ -44,7 +43,7 @@ OBJS = $(SRCS:.c=.o)
 
 CC = cc
 
-CFLAGS =  -Wall -Werror -Wextra #-fsanitize=address -g3
+CFLAGS =  -Wall -Werror -Wextra
 
 RM = /bin/rm
 

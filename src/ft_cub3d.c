@@ -6,7 +6,7 @@
 /*   By: habu-zua <habu-zua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 15:05:03 by habu-zua          #+#    #+#             */
-/*   Updated: 2024/06/02 18:02:18 by habu-zua         ###   ########.fr       */
+/*   Updated: 2024/06/09 10:31:58 by habu-zua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ int	ft_expose(t_storage *s)
 		*(int *)&s->mlx->data_img[i++ *s->mlx->bpixel] = s->info->colorf;
 	ft_raycaster(s, s->ray);
 	free(s->zbuffer);
-	if (s->info->rx >= 150 && s->info->ry >= 150)
-		ft_draw_mini_map(s);
 	ft_player_pos_cam(s, s->player);
 	mlx_put_image_to_window(s->mlx->ptr, s->mlx->win, s->mlx->img, 0, 0);
 	mlx_destroy_image(s->mlx->ptr, s->mlx->img);

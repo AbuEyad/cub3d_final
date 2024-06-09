@@ -6,7 +6,7 @@
 /*   By: habu-zua <habu-zua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 15:11:08 by habu-zua          #+#    #+#             */
-/*   Updated: 2024/06/02 18:54:39 by habu-zua         ###   ########.fr       */
+/*   Updated: 2024/06/09 10:35:53 by habu-zua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@
 # define KEYRELEASE_MASK 2
 
 int		ft_expose(t_storage *storage);
-void	ft_color_wall_mini_map(t_storage *storage, int y, int x, int color);
-void	ft_draw_mini_map(t_storage *storage);
 int		ft_read_info(char *s, t_info *info_map);
 int		ft_read_management(char *s, t_info *info_map);
 int		ft_check_extension(char *s);
@@ -55,7 +53,6 @@ void	ft_check_len_map(t_info *info_map);
 int		ft_exit_prog(t_storage *storage);
 int		ft_keyrelease(int keycode, t_move *move);
 int		ft_keypress(int keycode, t_move *move);
-void	ft_move_player_mini_map(t_storage *storage);
 void	ft_player_pos_cam(t_storage *storage, t_player *player);
 void	ft_raycaster(t_storage *storage, t_ray *ray);
 int		ft_init_texture(t_storage *storage, t_texture *texture, int w, int h);
@@ -65,8 +62,6 @@ void	ft_drw_wl_txr_sn(t_storage *s, t_texture *txr, t_text_info *t_i, int x);
 void	ft_drw_wl_txr_ew(t_storage *s, t_texture *txr, t_text_info *t_i, int x);
 void	*ft_memcpy(void *dst, const void *src, int n);
 int		ft_get_pos_player(t_info *info_map, int i, int x);
-void	ft_get_sprite_nb(t_info *info_map);
-void	ft_get_pos_sprite(t_info *info_map, t_storage *storage);
 int		ft_strlen(char *s);
 void	ft_putstr(char *s);
 void	ft_put2str(char *s1, char *s2);
